@@ -83,11 +83,11 @@ material_units=input("Enter Material units: ")
 num_jobs=int(input("Enter Number of Jobs: "))
 job_consumption=int(input("Enter Amount of Material consumed per Job: "))
 
-def material_waste(total_material, num_jobs, job_consumption):
-    waste=total_material - num_jobs*job_consumption
+def material_waste(total_material, num_jobs, job_consumption, material_units):
+    waste= stri(total_material - (num_jobs*job_consumption))+ material_units
     return(waste)
 
-remaining_material=(str(material_waste(total_material, num_jobs, job_consumption))+material_units)
+remaining_material=material_waste(total_material, num_jobs, job_consumption)
 print(remaining_material)
 
 
