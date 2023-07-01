@@ -5,7 +5,7 @@
 This assignment will develop your basic familiarity with Python.
 '''
 
-def savings(gross_pay, tax_rate, expenses):
+
     '''Savings.
     5 points.
 
@@ -45,7 +45,7 @@ def savings(gross_pay, tax_rate, expenses):
 total_savings= savings(gross_pay, tax_rate, expenses)
 print(total_savings)
 
-def material_waste(total_material, material_units, num_jobs, job_consumption):
+
     '''Material Waste.
     5 points.
 
@@ -90,7 +90,7 @@ def material_waste(total_material, num_jobs, job_consumption):
 remaining_material=(str(material_waste(total_material, num_jobs, job_consumption))+material_units)
 print(remaining_material)
 
-def interest(principal, rate, periods):
+
     '''Interest.
     5 points.
 
@@ -130,7 +130,7 @@ def interest(principal, rate, periods):
 final_value=int(interest(principal, rate, periods))
 print(final_value)
 
-def body_mass_index(weight, height):
+
     '''Body Mass Index.
     5 points.
 
