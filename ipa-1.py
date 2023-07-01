@@ -37,16 +37,13 @@ gross_pay=int(input("Enter Gross Pay in Centavos: "))
 tax_rate=float(input("Enter Tax Rate: "))
 expenses=int(input("Enter Expenses in Centavos: "))
 
-if tax_rate>=1:
-    print("Error, invalid tax rate.")
-elif tax_rate<=0:
-    print("Error, invalid tax rate.")
-else:
-    def savings(gross_pay, tax_rate, expenses):
-        net_pay= gross_pay - (gross_pay*tax_rate)//1
-        take_home= net_pay - expenses
-        return(take_home)
-print(savings(gross_pay, tax_rate, expenses))
+def savings(gross_pay, tax_rate, expenses):
+    net_pay= gross_pay - int(gross_pay*tax_rate)
+    take_home= net_pay - expenses
+    return(take_home)
+
+total_savings= savings(gross_pay, tax_rate, expenses)
+print(total_savings)
 
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''Material Waste.
@@ -90,7 +87,8 @@ def material_waste(total_material, num_jobs, job_consumption):
     waste=total_material - num_jobs*job_consumption
     return(waste)
 
-print(str(material_waste(total_material, num_jobs, job_consumption))+material_units)
+remaining_material=(str(material_waste(total_material, num_jobs, job_consumption))+material_units)
+print(remaining_material)
 
 def interest(principal, rate, periods):
     '''Interest.
@@ -128,7 +126,9 @@ def interest(principal, rate, periods):
     simple_interest=principal*(rate/100)*periods
     return(principal+simple_interest)
 
-print(int(interest(principal, rate, periods)))
+
+final_value=int(interest(principal, rate, periods))
+print(final_value)
 
 def body_mass_index(weight, height):
     '''Body Mass Index.
@@ -170,10 +170,11 @@ height=(input("Enter height in feet:"))
 def body_mass_index(weight, height):
     kg=weight*0.453592
     list_height=height.split(",")
-    ft_m=int(list_height[0])*0.3048
-    inch_m=int(list_height[1])*0.0254
-    m=ft_m+inch_m
+    ft_to_m=int(list_height[0])*0.3048
+    inch_to_m=int(list_height[1])*0.0254
+    m=ft_to_m+inch_to_m
     BMI=kg/(m**2)
     return(BMI)
 
-print(body_mass_index(weight, height))
+final_BMI=body_mass_index(weight, height)
+print(final_BMI)
