@@ -221,11 +221,11 @@ def scytale_cipher(message, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    extended_message = message + "_" * ((shift - len(message))% shift) 
+    raw_message = message + "_" * ((shift - len(message))% shift) 
     shifted_message = ""
 
-    for i in range(len(message)):
-        char = extended_message[(i // shift) + (len(extended_message) // shift) * (i % shift)]
+    for i in range(len(raw_message)):
+        char = raw_message[(i // shift) + (len(raw_message) // shift) * (i % shift)]
         shifted_message += char
 
     return shifted_message
