@@ -107,9 +107,9 @@ def eta(first_stop, second_stop, route_map):
     final_stop = first_stop
 
     while final_stop != second_stop:
-        for route, legs in route_map.items():
+        for route, time in route_map.items():
             if route[0] == final_stop:
-                travel_time = legs["travel_time_mins"]
+                travel_time = time["travel_time_mins"]
                 total_time += travel_time
                 final_stop = route[1]
                 break
