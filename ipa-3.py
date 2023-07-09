@@ -41,7 +41,17 @@ def relationship_status(from_member, to_member, social_graph):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    from_member_ff = social_graph[from_member]["following"]
+    to_member_ff = social_graph[to_member]["following"]
+
+    if from_member in to_member_ff and to_member in from_member_ff:
+        return "friends"
+    elif from_member in to_member_ff:
+        return "follower"
+    elif to_member in from_member_ff:
+        return "followed by"
+    else:
+        return "no relationship"  
 
 
 def tic_tac_toe(board):
@@ -70,7 +80,27 @@ def tic_tac_toe(board):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    first_diagonal=[]
+    second_diagonal=[]
+    for i in range(len(board)):
+        first_diagonal.append(board[i][i])
+        second_diagonal.append(board[i][len(board)-1-i])
+
+    for row in board:
+        if len(set(row)) == 1 and row[0] != "":
+            return row[0]
+    for col in range(len(board)): 
+        if len(set([board[row][col] for row in range(len(board))])) == 1 and board[0][col] != "":
+            return board[0][col]
+    
+    
+    if len(set(first_diagonal))==1 and first_diagonal[0]!="":
+        return first_diagonal[0]
+    if len(set(second_diagonal))==1 and second_diagonal[0]!="":
+        return second_diagonal[0]
+    
+    else:
+        return "NO WINNER"
 
 def eta(first_stop, second_stop, route_map):
     '''ETA.
