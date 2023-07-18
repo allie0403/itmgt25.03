@@ -47,9 +47,9 @@ def relationship_status(from_member, to_member, social_graph):
     if from_member in to_member_ff and to_member in from_member_ff:
         return "friends"
     elif from_member in to_member_ff:
-        return "follower"
-    elif to_member in from_member_ff:
         return "followed by"
+    elif to_member in from_member_ff:
+        return "follower"
     else:
         return "no relationship"  
 
